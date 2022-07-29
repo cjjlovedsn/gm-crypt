@@ -1,8 +1,7 @@
 'use strict'
+import * as base64js from 'base64-js'
 
-const base64js = require('base64-js')
-
-class Crypt {
+export class Crypt {
   /**
    * Converts a JS string to an UTF-8 uint8array.
    *
@@ -12,8 +11,7 @@ class Crypt {
    * @memberof Crypt
    */
   static stringToArrayBufferInUtf8 (str) {
-    // if not browser env, then require node.js's util. otherwise just use window's
-    const TextEncoder = (typeof window === 'undefined') ? require('util').TextEncoder : window.TextEncoder
+    const TextEncoder = window.TextEncoder
     // always utf-8
     let encoder = new TextEncoder()
     return encoder.encode(str)
@@ -58,5 +56,3 @@ class Crypt {
     return base64js.toByteArray(base64)
   }
 }
-
-module.exports = Crypt

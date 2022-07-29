@@ -1,6 +1,5 @@
 'use strict'
-
-const Crypt = require('./crypt')
+import { Crypt } from './crypt'
 
 const UINT8_BLOCK = 16
 
@@ -38,7 +37,7 @@ const FK = Uint32Array.from([
   0xa3b1bac6, 0x56aa3350, 0x677d9197, 0xb27022dc
 ])
 
-class SM4 {
+export class SM4 {
   /**
    * Creates an instance of SM4.
    * @param {Object} config
@@ -397,5 +396,3 @@ class SM4 {
     return Crypt.utf8ArrayBufferToString(depaddedPlaintext)
   }
 }
-
-module.exports = SM4

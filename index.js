@@ -1,5 +1,2 @@
-const SM4 = require('./src/sm4')
-
-module.exports = {
-  sm4: SM4
-}
+import { SM4 } from './src/sm4'
+export default SM4
